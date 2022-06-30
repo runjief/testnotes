@@ -1,4 +1,4 @@
-export { default as match } from './match';
+export { default as match, MatchOptions } from './match';
 export { default as matchJSON } from './matchJSON';
 export { default as currentTest } from './currentTest';
 export { default as getKey } from './getKey';

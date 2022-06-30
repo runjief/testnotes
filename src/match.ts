@@ -7,7 +7,7 @@ import getSnapshotKey from './getKey';
 import marshalTextOrJSON from './marshalTextOrJSON';
 import transformJSON from './transformJSON';
 
-export interface SnapshotOptions {
+export interface MatchOptions {
   key?: string;
   ext?: string;
   message?: string;
@@ -29,7 +29,7 @@ export default async function snapshotMatch(
     clean,
     assertEqual = (...args) => assert.equal(...args),
     update = process.env.SNAPSHOT_UPDATE === 'true',
-  }: SnapshotOptions = {},
+  }: MatchOptions = {},
 ): Promise<void> {
   const p = path.resolve(
     currentTest.file ?? __dirname,
