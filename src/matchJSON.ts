@@ -1,11 +1,12 @@
 import { assert } from 'chai';
-import snapshotMatch, { MatchOptions } from './match';
+import type { MatchOptions } from './match';
+import snapshotMatch from './match';
 
 export default async function snapshotMatchJSON(
-  actual: unknown,
+  value: unknown,
   opts?: MatchOptions,
 ): Promise<void> {
-  return snapshotMatch(actual, {
+  return snapshotMatch(value, {
     ext: '.json',
     marshal: (v) => JSON.stringify(v, undefined, 2),
     assertEqual: (actual, expected, message) =>

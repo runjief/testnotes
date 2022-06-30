@@ -1,7 +1,7 @@
 import currentTest from './currentTest';
 
 export default function getSnapshotKey(name = ''): string {
-  const ret = `${currentTest.key}${name ? '.' + name : ''}`.replace(
+  const ret = `${currentTest.key}${name ? `.${  name}` : ''}`.replace(
     /[ :*?<>"|]/g,
     '-',
   );

@@ -2,7 +2,7 @@ import { isPlainObject } from 'lodash-es';
 
 export default function toDeepKeySorted<T>(data: T): T {
   if (Array.isArray(data)) {
-    return data.map((i) => toDeepKeySorted(i)) as unknown as T;
+    return data.map((i) => toDeepKeySorted(i) as unknown) as unknown as T;
   }
   return Object.fromEntries(
     Object.entries(data)

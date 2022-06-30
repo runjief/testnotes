@@ -3,16 +3,16 @@ import { assert } from 'chai';
 import snapshot from '..';
 
 describe('transformJSON', function () {
-  it('string', async function () {
+  it('string', function () {
     assert.equal(snapshot.transformJSON('test'), 'test');
   });
-  it('boolean', async function () {
+  it('boolean', function () {
     assert.equal(snapshot.transformJSON(true), true);
   });
-  it('object', async function () {
+  it('object', function () {
     assert.deepEqual(snapshot.transformJSON({ a: 1 }), { a: 1 });
   });
-  it('custom object', async function () {
+  it('custom object', function () {
     class CustomObject {
       text = 'text';
     }
@@ -20,7 +20,7 @@ describe('transformJSON', function () {
       $CustomObject: { text: 'text' },
     });
   });
-  it('date', async function () {
+  it('date', function () {
     assert.deepEqual(snapshot.transformJSON(new Date(0)), {
       $Date: new Date(0),
     });
