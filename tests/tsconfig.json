@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "types": ["mocha"],
+    "moduleResolution": "node"
+  }
+}

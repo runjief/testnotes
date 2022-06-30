@@ -1,0 +1,9 @@
+require:
+  - ./tests/require.js
+recursive: true
+extension:
+  - ts
+spec:
+  - tests/setup.ts
+  - tests/**/*.spec.*
+timeout: false
